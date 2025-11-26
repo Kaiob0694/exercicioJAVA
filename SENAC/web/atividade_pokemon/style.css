@@ -23,7 +23,7 @@ body {
     width: 350px;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 32px 64px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 32px 64px rgba(255, 230, 6, 0.2);
     margin-bottom: 30px;
     transition: all 0.3s ease;
     
@@ -42,7 +42,7 @@ body {
     width: 580px;
     height: 480px;
     object-fit: contain;
-    border: solid 5px hwb(60 0% 55%);
+    /* border: solid 5px hwb(60 0% 55%); */
 }
 
 .pokemon-info {
