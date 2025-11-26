@@ -17,7 +17,7 @@ botaoCharmander.addEventListener("click", function(){
 
         pokemonName.textContent = "Charmander";
         // pokemonImg.style.border = "solid 5px rgba(192, 77, 1, 1)";
-        carta.style.boxShadow = "0 32px 64px rgba(255, 106, 6, 0.2)"
+        carta.style.boxShadow = "0 32px 64px rgba(255, 106, 6, 0.78)"
         
         
         pokemon_tipo.textContent = "Fogo";
@@ -36,7 +36,7 @@ botaoSquirtle.addEventListener("click", function(){
 
         pokemonName.textContent = "Squirtle";
         // pokemonImg.style.border = "solid 5px rgba(18, 0, 180, 1)";
-        carta.style.boxShadow = "0 32px 64px rgba(0, 47, 255, 0.2)"
+        carta.style.boxShadow = "0 32px 64px rgba(0, 47, 255, 0.69)"
         pokemon_tipo.textContent = "Agua";
         attacks_list.children[0].textContent = "Tackle";
         attacks_list.children[1].textContent = "Water Gun";
@@ -53,7 +53,7 @@ botaopikach.addEventListener("click", function(){
 
         pokemonName.textContent = "Pikachu";
         // pokemonImg.style.border = "solid 5px rgba(162, 197, 3, 1)";
-        carta.style.boxShadow = "0 32px 64px rgba(251, 255, 0, 0.2)"
+        carta.style.boxShadow = "0 32px 64px rgba(251, 255, 0, 0.62)"
         pokemon_tipo.textContent = "Elétrico";
         attacks_list.children[0].textContent = "Choque do Trovão";
         attacks_list.children[1].textContent = "Ataque Rápido";
