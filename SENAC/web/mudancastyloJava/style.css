@@ -1,0 +1,239 @@
+body{
+    background-color: rgb(20, 20, 20);
+    font-family: "Outfit", sans-serif;
+    margin: 0px;
+}
+
+header{     
+    background-color: black;   
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+
+
+#logo img{
+    height: 60px;
+    width: auto;
+}
+
+#imagens{
+    display: flex;
+}
+
+
+#img1{   
+    padding: 50px;
+    display: flex;
+    flex-direction: column; 
+    background-color: rgb(37, 37, 37);
+    border-radius: 30px;
+    color: aliceblue;
+}
+
+#img1 img{    
+    width: 300px;
+    height: 450px;
+    border-radius: 30px;
+    /* retirar o padding da imagem */
+}
+
+#img1:hover {
+    transition: 0.9s ease;
+    transform: scale(1.1); /* aumenta 10% */
+}
+
+#btn1{
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px;
+    margin-top: 15px;
+    font-weight: bold;
+    border-radius: 30px;
+    border: solid 0.5px rgba(164, 167, 3, 0.623);
+    color: aliceblue;
+    font-size: 20px;
+}
+
+#btn1:hover{
+    background-color:rgb(218, 214, 0);
+    color: black;
+    transition: 0.5s;
+}
+
+#img2{   
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue; 
+}
+
+
+#img2{   
+    padding: 50px; 
+}
+
+#img2 img{    
+    width: 300px;
+    height: 450px;
+    border-radius: 30px;
+    /* retirar o padding da imagem */
+}
+
+#btn2{
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px;
+    margin-top: 15px;
+    font-weight: bold;
+    border-radius: 30px;
+    border: solid 0.5px rgba(164, 167, 3, 0.623);
+    color: aliceblue;
+    font-size: 20px;
+}
+
+#btn2:hover{
+    background-color:rgb(218, 214, 0);
+    color: black;
+    transition: 0.5s;
+}
+
+#img3{   
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue; 
+}
+
+#img3{   
+    padding: 50px; 
+}
+
+#img3 img{    
+    width: 300px;
+    height: 450px;
+    border-radius: 30px;
+    /* retirar o padding da imagem */
+}
+
+#btn3{
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px;
+    margin-top: 15px;
+    font-weight: bold;
+    border-radius: 30px;
+    border: solid 0.5px rgba(164, 167, 3, 0.623);
+    color: aliceblue;
+    font-size: 20px;
+}
+
+#btn3:hover{
+    background-color:rgb(218, 214, 0);
+    color: black;
+    transition: 0.5s;
+}
+
+#img4{   
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue; 
+}
+
+#img4{   
+    padding: 50px; 
+}
+
+#img4 img{ 
+    width: 300px;
+    height: 450px;
+    border-radius: 30px;
+    /* retirar o padding da imagem */
+}
+
+#btn4{
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px;
+    margin-top: 15px;
+    font-weight: bold;
+    border-radius: 30px;
+    border: solid 0.5px rgba(164, 167, 3, 0.623);
+    color: aliceblue;
+    font-size: 20px;
+}
+
+#btn4:hover{
+    background-color:rgb(218, 214, 0);
+    color: black;
+    transition: 0.5s;
+}
+#img5{   
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue; 
+}
+
+#img5{   
+    padding: 50px; 
+}
+
+#img5 img{ 
+    width: 300px;
+    height: 450px;
+    border-radius: 30px;
+    /* retirar o padding da imagem */
+}
+
+
+#btn5{
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px;
+    margin-top: 15px;
+    font-weight: bold;
+    border-radius: 30px;
+    border: solid 0.5px rgba(164, 167, 3, 0.623);
+    color: aliceblue;
+    font-size: 20px;
+}
+
+#btn5:hover{
+    background-color:rgb(218, 214, 0);
+    color: black;
+    transition: 0.5s;
+}
+
+#img6{   
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue; 
+}
+
+#img6{   
+    padding: 50px; 
+}
+
+#img6 img{ 
+    width: 300px;
+    height: 450px;
+    border-radius: 30px;
+    /* retirar o padding da imagem */
+}
+
+#btn6{
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px;
+    margin-top: 15px;
+    font-weight: bold;
+    border-radius: 30px;
+    border: solid 0.5px rgba(164, 167, 3, 0.623);
+    color: aliceblue;
+    font-size: 20px;
+}
+
+#btn6:hover{
+    background-color:rgb(218, 214, 0);
+    color: black;
+    transition: 0.5s;
+}
+
+
