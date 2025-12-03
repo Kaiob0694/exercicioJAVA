@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Validação JS Personalizada</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+    <style>
+        .erro {
+            color: red;
+            font-size: 14px;
+        }
+
+        .ok {
+            color: green;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <form id="form">
+        <h2>Validação com JavaScript</h2>
+        <label>Nome:</label><br>
+        <input id="nome" type="text">
+        <p id="erroNome" class="erro"></p>
+
+        <label>Email:</label><br>
+        <input id="email" type="text">
+        <p id="erroEmail" class="erro"></p>
+
+        <label>Senha:</label><br>
+        <input id="senha" type="password">
+        <p id="erroSenha" class="erro"></p>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

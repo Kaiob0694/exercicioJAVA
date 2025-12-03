@@ -1,0 +1,26 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #E8E8E8;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: white;
+    width: 90%;
+    padding: 15px 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px auto;        
+    max-width: 1200px;       
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+nav ul {
+    display: flex;
+    gap: 100px;
+    list-style: none;
+}
