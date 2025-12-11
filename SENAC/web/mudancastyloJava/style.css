@@ -7,8 +7,10 @@ body{
 header{     
     background-color: black;   
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     padding: 25px;
+    margin-bottom: 55px;
 }
 
 
@@ -16,6 +18,53 @@ header{
     height: 60px;
     width: auto;
 }
+
+/* SWITCH DARK MODE */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 55px;
+    height: 28px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #ffd900; /* amarelo do seu estilo */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
 
 #imagens{
     display: flex;
@@ -25,9 +74,8 @@ header{
 #img1{   
     padding: 50px;
     display: flex;
-    flex-direction: column; 
-    background-color: rgb(37, 37, 37);
-    border-radius: 30px;
+    flex-direction: column;    
+    border-radius: 30px;    
     color: aliceblue;
 }
 
@@ -39,6 +87,7 @@ header{
 }
 
 #img1:hover {
+    background-color: rgb(37, 37, 37);
     transition: 0.9s ease;
     transform: scale(1.1); /* aumenta 10% */
 }
@@ -65,12 +114,20 @@ header{
     display: flex;
     flex-direction: column;
     color: aliceblue; 
+    border-radius: 30px;
 }
 
 
 #img2{   
     padding: 50px; 
 }
+
+#img2:hover {
+    background-color: rgb(37, 37, 37);
+    transition: 0.9s ease;
+    transform: scale(1.1); /* aumenta 10% */
+}
+
 
 #img2 img{    
     width: 300px;
@@ -101,10 +158,17 @@ header{
     display: flex;
     flex-direction: column;
     color: aliceblue; 
+    border-radius: 30px;
 }
 
 #img3{   
     padding: 50px; 
+}
+
+#img3:hover {
+    background-color: rgb(37, 37, 37);
+    transition: 0.9s ease;
+    transform: scale(1.1); /* aumenta 10% */
 }
 
 #img3 img{    
@@ -136,10 +200,17 @@ header{
     display: flex;
     flex-direction: column;
     color: aliceblue; 
+    border-radius: 30px;
 }
 
 #img4{   
     padding: 50px; 
+}
+
+#img4:hover {
+    background-color: rgb(37, 37, 37);
+    transition: 0.9s ease;
+    transform: scale(1.1); /* aumenta 10% */
 }
 
 #img4 img{ 
@@ -169,11 +240,18 @@ header{
     padding: 50px;
     display: flex;
     flex-direction: column;
-    color: aliceblue; 
+    color: aliceblue;
+    border-radius: 30px; 
 }
 
 #img5{   
     padding: 50px; 
+}
+
+#img5:hover {
+    background-color: rgb(37, 37, 37);
+    transition: 0.9s ease;
+    transform: scale(1.1); /* aumenta 10% */
 }
 
 #img5 img{ 
@@ -205,7 +283,8 @@ header{
     padding: 50px;
     display: flex;
     flex-direction: column;
-    color: aliceblue; 
+    color: aliceblue;
+    border-radius: 30px; 
 }
 
 #img6{   
@@ -235,5 +314,10 @@ header{
     color: black;
     transition: 0.5s;
 }
+
+.led {
+    box-shadow: 0 0 15px 5px rgba(251, 255, 0, 0.6);
+}
+
 
 
