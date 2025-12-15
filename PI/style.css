@@ -18,20 +18,22 @@
 
     padding: 0 25px;
 
-    background: rgba(255, 255, 255, 0.45);
-    backdrop-filter: blur(12px);
+    background: rgb(255, 255, 255);
     border-radius: 20px;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-
 
     z-index: 20;
 }
 
 /* LOGO */
+.logo {
+    padding: 55px;
+}
+
 .logo img {
     height: 60px;
 }
@@ -41,34 +43,85 @@
     position: relative;
     display: flex;
     align-items: center;
-    gap: 25px;
-    /* tudo junto mas ainda organizado */
-}
+    gap: 50px;
 
-/* LINKS */
-.menu a {
-    position: relative;
+    height: 85px;
+    /* mesma altura do header */
     z-index: 2;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #222;
-    padding: 33px 8px;
+    /* menu acima do traço */
 }
 
+.menu a {
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgb(132, 132, 132);
+
+    /* centralização do texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    /* ocupa altura total do menu */
+    padding: 0 35px;
+    /* espaço lateral */
+    position: relative;
+
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+/* MUDAR COR DO TEXTO NO HOVER */
+.menu a:hover {
+    color: white;
+}
+
+/* TRAÇO COLORIDO CRESCENDO PARA CIMA — ALINHADO AO FUNDO DO HEADER */
 .menu a::after {
-    content: '';
+    content: "";
     position: absolute;
-    bottom: 8px;
+    bottom: 0;
+    /* nasce colado ao fundo do header */
     left: 0;
     width: 100%;
-    height: 3px;
-    background-color: #FF6B6B;
-    border-radius: 2px;
-    transform: scaleX(0);
-    transform-origin: right;
+    height: 85%;
+
+    background: #ff3c00;
+    transform: scaleY(0.06);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+
+    transform-origin: bottom;
     transition: transform 0.3s ease;
+
+    z-index: -1;
+    /* fica atrás do texto */
 }
+
+/* ANIMAÇÃO */
+.menu a:hover::after {
+    transform: scaleY(1);
+}
+
+/* CORES INDIVIDUAIS */
+.menu a:nth-child(1)::after {
+    background: #ff3c00;
+    /* laranja */
+}
+
+.menu a:nth-child(2)::after {
+    background: #22a645;
+    /* verde */
+}
+
+.menu a:nth-child(3)::after {
+    background: #d9d900;
+    /* amarelo */
+}
+
+
 
 /* VÍDEO */
 .hero {
@@ -88,7 +141,6 @@
     position: relative;
     width: 100%;
     height: 500px;
-    /* ajuste como quiser */
     overflow: hidden;
 }
 
@@ -102,7 +154,6 @@
 .search-box {
     position: absolute;
     bottom: -40px;
-    /* faz ela ficar metade sobre o vídeo, metade fora */
     left: 50%;
     transform: translateX(-50%);
 
@@ -157,8 +208,9 @@
     flex-direction: column;
     text-align: center;
 }
+
 .hoteis h2 {
-    font-size:55px;
+    font-size: 55px;
     margin-bottom: 20px;
     color: #4b2e1a;
 }
@@ -168,12 +220,111 @@
     display: flex;
     justify-content: center;
     gap: 30px;
-
-  
 }
+
 .hotel-cards img {
     width: 300px;
-    height: 200px;
+    height: 300px;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 35px;
+}
+
+#titulo {
+    margin-top: 100px;
+    text-align: left;
+    padding: 33px 130px;
+}
+
+#titulo h1 {
+    font-size: 60px;
+    font-weight: 900;
+    color: #5c5c5c;
+    width: 455px;
+    padding: 30px 30px;
+}
+
+#titulo h3 {
+    font-size: 30px;
+    color: #5c5c5c;
+    padding: 0 30px;
+}
+
+#titulo p {
+    font-size: 20px;
+    color: #5c5c5c;
+    padding: 0 30px;
+    margin-top: 20px;
+    width: 550px;
+}
+
+.cachoeira {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(-80px);
+    /* vem da esquerda */
+    transition: all 1.0s ease;
+}
+
+.cachoeira.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#card-turismo {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    display: flex;
+    gap: 24px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 40px 0 10px;
+    scroll-snap-type: x mandatory;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+#card-turismo img {
+    width: 300px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 35px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 500px;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.card h3 {
+    position: absolute;
+    top: 90%;
+    font-size: 20px;
+    color: white;
+}
+
+.card button {
+    position: absolute;
+    top: 99%;
+    padding: 15px;
+    border-radius: 85px;
+    background-color: transparent;
+    border: solid 3px white;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    width: 250px;
 }

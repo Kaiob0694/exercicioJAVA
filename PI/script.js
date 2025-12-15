@@ -31,3 +31,18 @@ function typeEffect() {
 
 typeEffect();
 
+const cachoeira = document.querySelector('.cachoeira');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            cachoeira.classList.add('show');
+        } else {
+            cachoeira.classList.remove('show');
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+observer.observe(cachoeira);

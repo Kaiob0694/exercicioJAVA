@@ -1,7 +1,8 @@
 /* Geral */
 body {
     font-family: "Outfit", sans-serif;
-    background: #f4f4f4;
+    background: #b1b1b1;
+    ;
     margin: 0;
     padding: 0;
     display: flex;
@@ -13,11 +14,11 @@ body {
 
 form {
     background: white;
-    padding: 25px;
+    padding: 85px;
     margin-top: 40px;
     width: 350px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -54,26 +55,27 @@ input:focus {
 p {
     font-size: 13px;
     color: red;
-    height: 16px; /* mantém espaço mesmo sem erro */
+    height: 16px;
+    /* mantém espaço mesmo sem erro */
     margin-bottom: 10px;
 }
 
 
 button {
-    width: 100%;
-    padding: 12px;
-    background: #0084ff;
-    border: none;
-    color: white;
-    font-size: 16px;
+    width: 200px;
+    margin: 20px auto 0 auto;
+    display: block;
+    padding: 15px;
     border-radius: 8px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: 0.3s;
+    border: none;
+    background: #f0f0f0;
+    color: #006cd6;
+    font-weight: bold;
 }
 
 button:hover {
     background: #006cd6;
+    color: white;
 }
 
 
