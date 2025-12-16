@@ -7,75 +7,97 @@ const textos = [
 ];
 
 const input = document.getElementById("searchInput");
-let textoIndex = 0;
-let letraIndex = 0;
-let apagando = false;
 
-function typeEffect() {
-    const textoAtual = textos[textoIndex];
+if (input) {
+    let textoIndex = 0;
+    let letraIndex = 0;
+    let apagando = false;
 
-    if (!apagando) {
-        input.placeholder = textoAtual.slice(0, letraIndex++);
-        if (letraIndex > textoAtual.length) {
-            apagando = true;
-            setTimeout(typeEffect, 1500);
-            return;
+    function typeEffect() {
+        const textoAtual = textos[textoIndex];
+
+        if (!apagando) {
+            input.placeholder = textoAtual.slice(0, letraIndex++);
+            if (letraIndex > textoAtual.length) {
+                apagando = true;
+                setTimeout(typeEffect, 1500);
+                return;
+            }
+        } else {
+            input.placeholder = textoAtual.slice(0, letraIndex--);
+            if (letraIndex < 0) {
+                apagando = false;
+                textoIndex = (textoIndex + 1) % textos.length;
+                letraIndex = 0;
+            }
         }
-    } else {
-        input.placeholder = textoAtual.slice(0, letraIndex--);
-        if (letraIndex < 0) {
-            apagando = false;
-            textoIndex = (textoIndex + 1) % textos.length;
-            letraIndex = 0;
-        }
+
+        setTimeout(typeEffect, apagando ? 50 : 100);
     }
 
-    setTimeout(typeEffect, apagando ? 50 : 100);
+    typeEffect();
 }
-typeEffect();
 
-/* ================= SCROLL HORIZONTAL ARRASTÁVEL ================= */
+/* ================= SCROLL HORIZONTAL COM INÉRCIA ================= */
 const container = document.querySelector(".cachoeira");
-let isDown = false;
-let startX;
-let scrollLeft;
 
-const startDrag = (x) => {
-    isDown = true;
-    startX = x - container.offsetLeft;
-    scrollLeft = container.scrollLeft;
-    container.style.scrollBehavior = "auto";
-};
+if (container) {
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+    let velocity = 0;
+    let momentumID = null;
 
-const drag = (x) => {
-    if (!isDown) return;
-    const walk = (x - startX) * 1.5; // ajusta a velocidade do arraste
-    container.scrollLeft = scrollLeft - walk;
-};
+    const startDrag = (x, target) => {
+        if (target.closest(".card")) return; // NÃO arrasta sobre card
 
-const stopDrag = () => {
-    isDown = false;
-    container.style.scrollBehavior = "smooth";
-};
+        isDown = true;
+        startX = x - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+        container.style.cursor = "grabbing";
+        cancelMomentum();
+    };
 
-/* Eventos desktop */
-container.addEventListener("mousedown", e => startDrag(e.pageX));
-container.addEventListener("mousemove", e => drag(e.pageX));
-container.addEventListener("mouseup", stopDrag);
-container.addEventListener("mouseleave", stopDrag);
+    const drag = (x) => {
+        if (!isDown) return;
 
-/* Eventos touch */
-container.addEventListener("touchstart", e => startDrag(e.touches[0].pageX));
-container.addEventListener("touchmove", e => drag(e.touches[0].pageX));
-container.addEventListener("touchend", stopDrag);
+        const walk = (x - startX) * 1.5;
+        velocity = walk - (scrollLeft - container.scrollLeft);
+        container.scrollLeft = scrollLeft - walk;
+    };
 
-/* Bloqueia scroll vertical acidental */
-container.addEventListener("wheel", e => {
-    if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) {
-        container.scrollLeft += e.deltaY;
-        e.preventDefault();
-    }
-}, { passive: false });
+    const stopDrag = () => {
+        if (!isDown) return;
+
+        isDown = false;
+        container.style.cursor = "grab";
+        momentum();
+    };
+
+    const momentum = () => {
+        cancelMomentum();
+        momentumID = requestAnimationFrame(() => {
+            container.scrollLeft -= velocity;
+            velocity *= 0.95;
+            if (Math.abs(velocity) > 0.5) momentum();
+        });
+    };
+
+    const cancelMomentum = () => {
+        if (momentumID) cancelAnimationFrame(momentumID);
+    };
+
+    /* Eventos desktop */
+    container.addEventListener("mousedown", e => startDrag(e.pageX, e.target));
+    container.addEventListener("mousemove", e => drag(e.pageX));
+    container.addEventListener("mouseup", stopDrag);
+    container.addEventListener("mouseleave", stopDrag);
+
+    /* Eventos touch */
+    container.addEventListener("touchstart", e => startDrag(e.touches[0].pageX, e.target));
+    container.addEventListener("touchmove", e => drag(e.touches[0].pageX));
+    container.addEventListener("touchend", stopDrag);
+}
 
 /* ================= ANIMAÇÕES GSAP ================= */
 gsap.registerPlugin(ScrollTrigger);
@@ -95,7 +117,7 @@ gsap.from(".hero", {
     ease: "power2.out"
 });
 
-/* Títulos da seção "Cachoeira" */
+/* Texto da seção Cachoeira */
 gsap.from("#titulo h1, #titulo h3, #titulo p", {
     y: 50,
     opacity: 0,
@@ -109,7 +131,7 @@ gsap.from("#titulo h1, #titulo h3, #titulo p", {
     }
 });
 
-/* Cards da seção "Cachoeira" */
+/* Cards da seção Cachoeira */
 gsap.from("#card-turismo .card", {
     y: 30,
     opacity: 0,
