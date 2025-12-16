@@ -6,124 +6,83 @@
     font-family: 'Inter', sans-serif;
 }
 
-/* HEADER COM MENU INTEGRADO */
+html, body {
+    overflow-x: hidden;
+}
+
+/* ================= HEADER ================= */
 .header {
     position: fixed;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-
     width: 85%;
     height: 85px;
-
     padding: 0 25px;
-
-    background: rgb(255, 255, 255);
+    background: #fff;
     border-radius: 20px;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
-
+    box-shadow: 0 4px 25px rgba(0,0,0,.25);
     display: flex;
-    justify-content: center;
     align-items: center;
-
-    z-index: 20;
+    justify-content: center;
+    z-index: 100;
 }
 
-/* LOGO */
 .logo {
-    padding: 55px;
+    padding-right: 60px;
 }
 
 .logo img {
     height: 60px;
 }
 
-/* MENU — INTEGRADO AO HEADER */
+/* MENU */
 .menu {
-    position: relative;
     display: flex;
-    align-items: center;
     gap: 50px;
-
-    height: 85px;
-    /* mesma altura do header */
-    z-index: 2;
-    /* menu acima do traço */
+    height: 100%;
 }
 
 .menu a {
-    font-size: 20px;
-    font-weight: 500;
-    text-decoration: none;
-    color: rgb(132, 132, 132);
-
-    /* centralização do texto */
     display: flex;
     align-items: center;
     justify-content: center;
-
     height: 100%;
-    /* ocupa altura total do menu */
     padding: 0 35px;
-    /* espaço lateral */
+    font-size: 20px;
+    color: #888;
+    text-decoration: none;
     position: relative;
-
-    z-index: 2;
-    transition: color 0.3s ease;
+    transition: color .3s ease;
 }
 
-/* MUDAR COR DO TEXTO NO HOVER */
 .menu a:hover {
-    color: white;
+    color: #fff;
 }
 
-/* TRAÇO COLORIDO CRESCENDO PARA CIMA — ALINHADO AO FUNDO DO HEADER */
 .menu a::after {
     content: "";
     position: absolute;
     bottom: 0;
-    /* nasce colado ao fundo do header */
     left: 0;
     width: 100%;
     height: 85%;
-
     background: #ff3c00;
-    transform: scaleY(0.06);
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-
-
+    transform: scaleY(.05);
     transform-origin: bottom;
-    transition: transform 0.3s ease;
-
+    border-radius: 15px 15px 0 0;
+    transition: transform .3s ease;
     z-index: -1;
-    /* fica atrás do texto */
 }
 
-/* ANIMAÇÃO */
 .menu a:hover::after {
     transform: scaleY(1);
 }
 
-/* CORES INDIVIDUAIS */
-.menu a:nth-child(1)::after {
-    background: #ff3c00;
-    /* laranja */
-}
+.menu a:nth-child(2)::after { background: #22a645; }
+.menu a:nth-child(3)::after { background: #d9d900; }
 
-.menu a:nth-child(2)::after {
-    background: #22a645;
-    /* verde */
-}
-
-.menu a:nth-child(3)::after {
-    background: #d9d900;
-    /* amarelo */
-}
-
-
-
-/* VÍDEO */
+/* ================= HERO VIDEO ================= */
 .hero {
     width: 100%;
     height: 100vh;
@@ -134,45 +93,27 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
-/* Container do vídeo */
-.video-container {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-}
-
-.video-container video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Barra flutuante */
+/* ================= SEARCH ================= */
 .search-box {
     position: absolute;
     bottom: -40px;
     left: 50%;
     transform: translateX(-50%);
-
     width: 85%;
     max-width: 950px;
-    background: white;
     padding: 25px 40px;
-
-    display: flex;
-    align-items: center;
-    gap: 25px;
-
+    background: #fff;
     border-radius: 50px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-
+    box-shadow: 0 8px 25px rgba(0,0,0,.15);
+    display: flex;
+    gap: 25px;
+    align-items: center;
     z-index: 10;
 }
 
-/* Título */
 .search-title {
     font-size: 22px;
     font-weight: 600;
@@ -180,38 +121,138 @@
     white-space: nowrap;
 }
 
-/* Linha do input */
 .search-box input {
     flex: 1;
     border: none;
     border-bottom: 2px solid #1a2b4b;
-    padding: 10px 5px;
     font-size: 18px;
     outline: none;
     background: transparent;
+    padding: 8px;
 }
 
-/* Botão com ícone */
 .search-btn {
     background: none;
     border: none;
-    cursor: pointer;
     font-size: 22px;
-    padding: 5px;
+    cursor: pointer;
 }
 
-.hoteis {
-    margin: 100px auto;
-    max-width: 1200px;
-    padding: 0 20px;
+/* ================= CACHOEIRA (HORIZONTAL) ================= */
+.cachoeira {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    min-height: 600px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 50px 30px;
+    gap: 50px;
+}
+
+.cachoeira::-webkit-scrollbar { display: none; }
+.cachoeira { scrollbar-width: none; }
+
+#card-turismo {
+    display: flex;
+    gap: 30px;
+    padding: 140px 130px;
+}
+
+#titulo {
+    flex: 0 0 400px; /* largura fixa para o texto */
+    max-width: 500px;
+    padding: 20px;
+}
+
+#titulo h3 {
+    font-size: 30px;
+    color: #666;
+}
+
+#titulo h1 {
+    font-size: 60px;
+    font-weight: 900;
+    color: #555;
+    margin: 30px 0;
+    max-width: 480px;
+}
+
+#titulo p {
+    font-size: 20px;
+    color: #666;
+    max-width: 560px;
+}
+
+/* ================= CARDS ================= */
+.card {
+    flex: 0 0 400px;
+    height: 600px;
+    border-radius: 35px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Overlay escuro na parte inferior dos cards */
+.card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+    pointer-events: none;
+    z-index: 1; /* overlay atrás do texto */
+}
+
+/* Texto e botão na frente da sombra */
+.card h3,
+.card button {
+    position: absolute;
+    z-index: 2; /* sempre na frente */
+}
+
+.card h3 {
+    bottom: 90px;
+    width: 100%;
     text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+
+.card button {
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    padding: 12px;
+    border-radius: 50px;
+    border: 3px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* ================= HOTEIS ================= */
+.hoteis {
+    max-width: 1200px;
+    margin: 120px auto;
+    text-align: center;
+    padding: 0 20px;
 }
 
 .hoteis h2 {
     font-size: 55px;
-    margin-bottom: 20px;
     color: #4b2e1a;
 }
 
@@ -227,104 +268,6 @@
     height: 300px;
     object-fit: cover;
     border-radius: 35px;
-}
-
-#titulo {
-    margin-top: 100px;
-    text-align: left;
-    padding: 33px 130px;
-}
-
-#titulo h1 {
-    font-size: 60px;
-    font-weight: 900;
-    color: #5c5c5c;
-    width: 455px;
-    padding: 30px 30px;
-}
-
-#titulo h3 {
-    font-size: 30px;
-    color: #5c5c5c;
-    padding: 0 30px;
-}
-
-#titulo p {
-    font-size: 20px;
-    color: #5c5c5c;
-    padding: 0 30px;
-    margin-top: 20px;
-    width: 550px;
-}
-
-.cachoeira {
-    display: flex;
-    align-items: center;
-    opacity: 0;
-    transform: translateX(-80px);
-    /* vem da esquerda */
-    transition: all 1.0s ease;
-}
-
-.cachoeira.show {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-#card-turismo {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    display: flex;
-    gap: 24px;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    padding: 40px 0 10px;
-    scroll-snap-type: x mandatory;
-
-    -webkit-overflow-scrolling: touch;
-}
-
-#card-turismo img {
-    width: 300px;
-    height: 600px;
-    object-fit: cover;
-    border-radius: 35px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-}
-
-.card {
+    display: block;
     position: relative;
-    width: 300px;
-    height: 500px;
-    border-radius: 35px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-
-.card h3 {
-    position: absolute;
-    top: 90%;
-    font-size: 20px;
-    color: white;
-}
-
-.card button {
-    position: absolute;
-    top: 99%;
-    padding: 15px;
-    border-radius: 85px;
-    background-color: transparent;
-    border: solid 3px white;
-    font-size: 20px;
-    color: rgb(255, 255, 255);
-    width: 250px;
 }
