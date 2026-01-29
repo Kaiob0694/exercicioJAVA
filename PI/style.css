@@ -11,7 +11,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ================= HEADER ================= */
 .header {
     position: fixed;
     top: 20px;
@@ -88,7 +87,7 @@ body {
     background: #d9d900;
 }
 
-/* ================= HERO VIDEO ================= */
+
 .hero {
     width: 100%;
     height: 100vh;
@@ -102,7 +101,7 @@ body {
     display: block;
 }
 
-/* ================= SEARCH ================= */
+
 .search-box {
     position: absolute;
     bottom: -40px;
@@ -144,7 +143,7 @@ body {
     cursor: pointer;
 }
 
-/* ================= CACHOEIRA (HORIZONTAL) ================= */
+
 .cachoeira {
     display: flex;
     flex-direction: row;
@@ -180,8 +179,7 @@ body {
 }
 
 #titulo {
-    flex: 0 0 400px;
-    /* largura fixa para o texto */
+    flex: 0 0 400px;    
     max-width: 500px;
     padding: 20px;
 }
@@ -205,7 +203,7 @@ body {
     max-width: 560px;
 }
 
-/* ================= CARDS ================= */
+
 .card {
     flex: 0 0 400px;
     height: 600px;
@@ -213,7 +211,6 @@ body {
     overflow: hidden;
     position: relative;
     pointer-events: auto;
-
     transition:
         transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
         box-shadow 0.45s ease;
@@ -229,7 +226,7 @@ body {
     display: block;
 }
 
-/* Overlay escuro na parte inferior dos cards */
+
 .card::after {
     content: '';
     position: absolute;
@@ -240,15 +237,15 @@ body {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
     pointer-events: none;
     z-index: 1;
-    /* overlay atrás do texto */
+    
 }
 
-/* Texto e botão na frente da sombra */
+
 .card h3,
 .card button {
     position: absolute;
     z-index: 2;
-    /* sempre na frente */
+   
 }
 
 .card h3 {
@@ -273,7 +270,7 @@ body {
     cursor: pointer;
 }
 
-/* ================= HOTEIS ================= */
+
 .hoteis {
     max-width: 1200px;
     margin: 120px auto;
@@ -302,7 +299,7 @@ body {
     position: relative;
 }
 
-/* ================= INSTAGRAM ================= */
+
 .instagram {
     max-width: 1200px;
     margin: 140px auto;
@@ -322,7 +319,7 @@ body {
     margin-bottom: 50px;
 }
 
-/* Feed */
+
 .instagram-feed {
     display: flex;
     gap: 30px;
@@ -330,7 +327,7 @@ body {
     flex-wrap: wrap;
 }
 
-/* Ajuste do embed */
+
 .instagram-feed blockquote {
     max-width: 350px;
     width: 100%;
