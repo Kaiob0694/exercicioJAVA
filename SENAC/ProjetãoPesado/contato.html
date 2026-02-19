@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contato - Gerenciamento de Manutenção</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JS novamente bloqueando -->
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <h1>Contato</h1>
+
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="sobre.html">Sobre</a> |
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <hr>
+
+    <!-- Imagem grande novamente -->
+    <img src="img/banner.webp" width="100%">
+
+    <section>
+        <h2>Fale Conosco</h2>
+
+        <form>
+            <label>Nome:</label><br>
+            <input type="text"><br><br>
+
+            <label>Email:</label><br>
+            <input type="email"><br><br>
+
+            <label>Mensagem:</label><br>
+            <textarea rows="5" cols="40"></textarea><br><br>
+
+            <button type="button" onclick="carregarDados()">
+                Enviar
+            </button>
+        </form>
+    </section>
+
+    <div id="resultado"></div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerenciamento de Manutenção</title>
+
+    <!-- CSS grande carregando no head -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JS bloqueando renderização -->
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <h1>Sistema de Gerenciamento de Manutenção</h1>
+
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="sobre.html">Sobre</a> |
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <hr>
+
+    <!-- Imagem grande sem otimização -->
+    <img src="img/banner.webp" width="100%">
+
+    <section>
+        <h2>Ordens de Serviço</h2>
+        <p>
+            Este sistema permite controlar solicitações de manutenção,
+            registrar chamados técnicos e acompanhar o status das atividades.
+        </p>
+    </section>
+
+    <button onclick="carregarDados()">Carregar Dados</button>
+
+    <div id="resultado"></div>
+
+</body>
+</html>
