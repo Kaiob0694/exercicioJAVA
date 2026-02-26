@@ -463,26 +463,26 @@ body {
     font-size: 26px;
     color: #CE1619;
 }
-.botao{
+.botao {
+    margin-top: auto; /* empurra para baixo */
     display: flex;
     justify-content: center;
-    padding: 55px;
+    padding-top: 20px;
 }
-.botao button{
-    display: flex;
-    justify-content: center;
-    padding: 22px 80px;
-    background-color: #FAB816;
-    color: #fff;
-    border: none;
-    border-radius: 30px;
+.botao button {
+    padding: 12px 40px;
+    border: solid 2px #009100;
+    color: #009100;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
     transition: 0.3s ease;
+    background: transparent;
 }
 
 .botao button:hover{
     background-color: #007700;
+    color: white;
 }
 .noticia {
     text-align: center;
@@ -543,11 +543,45 @@ body {
     color: #222;
     margin: 5px 0 0 0;
 }
-.titulo{
+
+.texto{
+    padding: 88px;
     display: flex;
     justify-content: center;
-    padding: 100px;
+    flex-direction: column;
+    text-align: center;
 }
-.titulo h1{
-    margin-top: 88px;
+
+.texto h1{
+    font-size: 75px;
+    color:#595959;
+    font-weight: 200;
+}
+
+.texto p{
+    max-width:50%;
+    margin: 0 auto;
+}
+.pousada {
+    padding: 40px 148px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.bela {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: solid 1px rgba(0, 0, 0, 0.226);
+}
+
+.bela h3{
+    font-size:25px;
+    margin-top: 15px;
+}
+.bela p{
+    font-size:20px ;
+}
+i{
+    color: #009100;
 }
