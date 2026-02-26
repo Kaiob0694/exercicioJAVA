@@ -1,27 +1,24 @@
-const cepInput = document.getElementById("cep");
+// seleção de captura de elementos
+const caracterId = document.getElementById('caracterId');
+const btnGo = document.getElementById('btn-go');
+const content = document.getElementById('content');
+const img = document.getElementById('img');
 
-cepInput.addEventListener("blur", () => {
-  let cep = cepInput.value.replace(/\D/g, "");
+const fetchApi = (value) => {
+  const result = fetch(`https://rickandmortyapi.com/api/character/${value}`)
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+    return data;
+  });
 
-  if (cep.length !== 8) {
-    alert("CEP inválido");
-    return;
-  }
+  return result;
 
-  fetch(`https://viacep.com.br/ws/${cep}/json/`)
-    .then(response => response.json())
-    .then(data => {
-      if (data.erro) {
-        alert("CEP não encontrado");
-        return;
-      }
+}
 
-      document.getElementById("rua").value = data.logradouro;
-      document.getElementById("bairro").value = data.bairro;
-      document.getElementById("cidade").value = data.localidade;
-      document.getElementById("estado").value = data.uf;
-    })
-    .catch(() => {
-      alert("Erro ao buscar o CEP");
-    });
+btnGo.addEventListener('click', async (event) => {
+  event.preventDefault();
+  const result = await fetchApi(caracterId.value);
+  content.textContent = `${JSON.stringify(result, null, 2)}`;
+  img.src = `${result.image}`;
 });
